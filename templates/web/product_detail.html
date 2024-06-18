@@ -1,0 +1,28 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+<
+<div class="untree_co-section product-section before-footer-section">
+    <div class="container">
+        <div class="row">
+            <br>
+            <!-- Start Column 4 -->
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="{% url 'product-detail' product.id%}">
+                    <img src="{{product.image.url}}" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">{{product.product_name}}</h3>
+                    <strong class="product-price">${{product.price}}</strong>
+                </a>
+            </div>
+            <!-- End Column 4 -->
+        </div>
+        <a href="{% url 'product-update' product.id %}">
+            <button type="submit" class="btn btn-primary">Update</button>
+        </a>
+        <a href="{% url 'product-delete' product.id %}">
+            <button type="button" class="btn btn-danger">Delete</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
